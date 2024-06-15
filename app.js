@@ -6,29 +6,16 @@ const description = document.querySelector(".description");
 const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("wind-speed");
 const data = document.getElementById("date");
-
 const location_not_found = document.querySelector(".location-not-found");
 const weatherBody = document.querySelector(".weather-card");
-
-// Built-in API request by city name
-// You can call by city name or city name in English:
-//Bucharest Almaty Prague  Malaga Nairobi  Munich Alaska New York
-
-//Serverul Web de Informații Meteorologice: Furnizează date meteorologice și oferă un API prin care aplicatia web poate solicita și primi aceste date.
-
-//functie asincrona cu wait fetch
+const APIurl =
+  "https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
 
 async function checkWeather(city) {
-  const url =
-    "https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
-
-  //utilizare fetch pt obtinerea datelor din api endpoin si transformarea lor in json care apoi sa fie utilizate in DOM cand promisiunea se rezolva
-  //get cu url schimbate in
-  const weatherData = await fetch(`${url}${city}`).then((response) =>
+  const weatherData = await fetch(`${APIurl}${city}`).then((response) =>
     response.json()
   );
 
-  //display error for location clasa location_not_found trece din none la display:flex, clasa weatherBody ramane in display none
   if (weatherData.cod === `404`) {
     location_not_found.style.display = "flex";
     weatherBody.style.display = "none";
@@ -36,7 +23,6 @@ async function checkWeather(city) {
     return;
   }
 
-  //display clasa weatherBody si clasa in location_not_found ramene in display:none
   console.log("run");
   location_not_found.style.display = "none";
   weatherBody.style.display = "flex";
@@ -55,54 +41,13 @@ async function checkWeather(city) {
   };
   const date = getLocaleDateFromUnixTime(weatherData.dt);
 
-  //output in html a informatiilor primite din api
   data.innerHTML = ` ${date}`;
   temperature.innerHTML = `${Math.round(weatherData.main.temp)}°C`;
   description.innerHTML = `${weatherData.weather[0].description}`;
   humidity.innerHTML = `${weatherData.main.humidity}%`;
 
-  //wind.speed cu o zecimale
   windSpeed.innerHTML = `${weatherData.wind.speed.toFixed(1)}km/h`;
 
-  //schimbarea tipului de icon in functie de descrierea vremei
-
-  // switch case
-  // switch (weatherData.weather[0].main) {
-  //   case "Clear":
-  //     weatherImg.src = "/img/sun.png";
-  //     breack;
-  //   case "Clouds":
-  //     weatherImg.src = "/img/cloud.png";
-  //     breack;
-  //   case "Rain":
-  //     weatherImg.src = "/img/rain.png";
-  //     breack;
-  //   case "Snow":
-  //     weatherImg.src = "/img/snow.png";
-  //   case "Storm":
-  //     weatherImg.src = "/img/strom.png";
-  //     breack;
-  //   case "Mist":
-  //     weatherImg.src = "/img/mist.png";
-  //     breack;
-  //   case "Smoke":
-  //     weatherImg.src = "/img/mist.png";
-  //     breack;
-  //   case "Fog":
-  //     weatherImg.src = "/img/mist.png";
-  //     breack;
-  // }
-
-  // switch (weatherData.weather[0].description) {
-  //   case "broken clouds":
-  //     weatherImg.src = "/img/broken-clouds.png";
-  //     breack;
-  //   case "overcast clouds":
-  //     weatherImg.src = "/img/broken-clouds.png";
-  //     breack;
-  // }
-
-  //if case pt flexibilitate mai mare de a folosii mai multe variabile
   if (weatherData.weather[0].main === "Clear") {
     weatherImg.src = "/img/sun.png";
   } else if (weatherData.weather[0].description === "broken clouds") {
@@ -127,7 +72,7 @@ async function checkWeather(city) {
 
   console.log(weatherData);
 }
-//prin apasarrea butonului de search se exercuta functia
+
 searchBtn.addEventListener("click", () => {
   checkWeather(inputSearch.value);
 });
