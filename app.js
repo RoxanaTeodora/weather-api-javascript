@@ -49,25 +49,25 @@ async function checkWeather(city) {
   windSpeed.innerHTML = `${weatherData.wind.speed.toFixed(1)}km/h`;
 
   if (weatherData.weather[0].main === "Clear") {
-    weatherImg.src = "/img/sun.png";
+    weatherImg.src = "/assets/sun.png";
   } else if (weatherData.weather[0].description === "broken clouds") {
-    weatherImg.src = "/img/broken-clouds.png";
+    weatherImg.src = "/assets/broken-clouds.png";
   } else if (weatherData.weather[0].description === "overcast clouds") {
-    weatherImg.src = "/img/broken-clouds.png";
+    weatherImg.src = "/assets/broken-clouds.png";
   } else if (weatherData.weather[0].main === "Clouds") {
-    weatherImg.src = "/img/cloud.png";
+    weatherImg.src = "/assets/cloud.png";
   } else if (weatherData.weather[0].main === "Rain") {
-    weatherImg.src = "/img/rain.png";
+    weatherImg.src = "/assets/rain.png";
   } else if (weatherData.weather[0].main === "Storm") {
-    weatherImg.src = "/img/strom.png";
+    weatherImg.src = "/assets/strom.png";
   } else if (weatherData.weather[0].main === "Mist") {
-    weatherImg.src = "/img/mist.png";
+    weatherImg.src = "/assets/mist.png";
   } else if (weatherData.weather[0].main === "Snow") {
-    weatherImg.src = "/img/snow.png";
+    weatherImg.src = "/assetssnow.png";
   } else if (weatherData.weather[0].main === "Smoke") {
-    weatherImg.src = "/img/smoke.png";
+    weatherImg.src = "/assets/smoke.png";
   } else if (weatherData.weather[0].main === "Fog") {
-    weatherImg.src = "/img/smoke.png";
+    weatherImg.src = "/assets/smoke.png";
   }
 
   console.log(weatherData);

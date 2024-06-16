@@ -1,0 +1,213 @@
+:root {
+  --ui-color-primary-100: #d6e5f6;
+  --ui-color-primary-200: #5e729d;
+  --ui-color-primary-300: #5c6484;
+  --ui-color-primary-400: #283466;
+
+  --ui-color-white: #fff;
+  --ui-color-shadow: #343333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: sans-serif;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 0.02em;
+  padding: 0 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--ui-color-white);
+  margin-bottom: 50px;
+}
+
+body {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ui-color-primary-400);
+}
+
+.container {
+  width: 550px;
+  height: min-content;
+  background-color: var(--ui-color-white);
+  border-radius: 10px;
+  padding: 35px;
+  margin-left: 6px;
+}
+
+.search-box {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  width: 80px;
+  height: 70px;
+  background-color: var(--ui-color-primary-200);
+  /* opacity: 80%; */
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 20px;
+  box-shadow: 0 5px var(--ui-color-primary-400);
+
+  &:hover {
+    background-color: var(--ui-color-primary-300);
+  }
+
+  &:active {
+    background-color: var(--ui-color-primary-300);
+    box-shadow: 0 2px var(--ui-color-shadow);
+    transform: translateY(4px);
+  }
+}
+
+.search-box img {
+  height: 50px;
+  width: 50px;
+}
+
+.search-box input {
+  width: 85%;
+  font-size: 30px;
+  color: var(--ui-color-primary-400);
+  background-color: var(--ui-color-primary-100);
+  padding: 20px 30px;
+  border-radius: 14px;
+  text-transform: capitalize;
+
+  &::placeholder {
+    color: var(--ui-color-primary-400);
+  }
+}
+
+/* cardul care contine 2 div-uri image si detaliile */
+.weather-card {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-block: 20px;
+  display: flex;
+  display: none;
+
+  /* imaginea asociata tipului de vreme */
+  img {
+    width: 60%;
+    margin: 20px;
+    padding: 10px;
+  }
+
+  /* detaile legate de vreme */
+  .weather-box {
+    /* margin-block: 20px; */
+    text-align: center;
+  }
+
+  .temperature {
+    font-size: 50px;
+    font-weight: 650;
+    position: relative;
+  }
+
+  sup {
+    font-size: 60px;
+    position: absolute;
+  }
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+#date {
+  font-weight: 700;
+}
+
+.weather-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+
+  .humidity,
+  .wind {
+    display: flex;
+    padding: 50px;
+    align-items: center;
+  }
+
+  i {
+    font-size: 36px;
+    padding: 5px;
+    color: var(--ui-color-primary-400);
+  }
+}
+
+.location-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  padding: 10px;
+  color: var(--ui-color-primary-400);
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ui-color-primary-400);
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    // padding: 0 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--ui-color-white);
+    margin-bottom: 1vw;
+  }
+
+  .container {
+    width: 100%;
+    background-color: var(--ui-color-white);
+    border-radius: 10px;
+    // padding: 35vw;
+    margin-left: 0vw;
+  }
+
+  .search-box input {
+    width: 85%;
+    font-size: 20px;
+    color: var(--ui-color-primary-400);
+    background-color: var(--ui-color-primary-100);
+    padding: 20px 30px;
+    border-radius: 14px;
+    text-transform: capitalize;
+  }
+}
