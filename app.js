@@ -5,7 +5,7 @@ const temperature = document.querySelector(".temperature");
 const description = document.querySelector(".description");
 const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("wind-speed");
-const data = document.getElementById("date");
+const APIprovidingData = document.getElementById("date");
 const location_not_found = document.querySelector(".location-not-found");
 const weatherBody = document.querySelector(".weather-card");
 const APIurl =
@@ -41,7 +41,7 @@ async function checkWeather(city) {
   };
   const date = getLocaleDateFromUnixTime(weatherData.dt);
 
-  data.innerHTML = ` ${date}`;
+  APIprovidingData.innerHTML = ` ${date}`;
   temperature.innerHTML = `${Math.round(weatherData.main.temp)}°C`;
   description.innerHTML = `${weatherData.weather[0].description}`;
   humidity.innerHTML = `${weatherData.main.humidity}%`;

@@ -1,3 +1,13 @@
+:root {
+  --ui-color-primary-100: #d6e5f6;
+  --ui-color-primary-200: #5e729d;
+  --ui-color-primary-300: #5c6484;
+  --ui-color-primary-400: #283466;
+
+  --ui-color-white: #fff;
+  --ui-color-shadow: #343333;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +26,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--ui-color-white);
   margin-bottom: 50px;
 }
 
@@ -25,13 +35,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #283466;
+  background-color: var(--ui-color-primary-400);
 }
 
 .container {
   width: 550px;
   height: min-content;
-  background-color: #fff;
+  background-color: var(--ui-color-white);
   border-radius: 10px;
   padding: 35px;
   margin-left: 6px;
@@ -48,22 +58,22 @@ body {
 .search-box button {
   width: 80px;
   height: 70px;
-  background-color: #5e729d;
+  background-color: var(--ui-color-primary-200);
   /* opacity: 80%; */
   border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
   margin-left: 20px;
-  box-shadow: 0 5px #283466;
+  box-shadow: 0 5px var(--ui-color-primary-400);
 }
 
 button:hover {
-  background-color: #5c6484;
+  background-color: var(--ui-color-primary-300);
 }
 
 button:active {
-  background-color: #5c6484;
-  box-shadow: 0 2px #343333;
+  background-color: var(--ui-color-primary-300);
+  box-shadow: 0 2px var(--ui-color-shadow);
   transform: translateY(4px);
 }
 
@@ -75,15 +85,15 @@ button:active {
 .search-box input {
   width: 85%;
   font-size: 30px;
-  color: #283466;
-  background-color: #d6e5f6;
+  color: var(--ui-color-primary-400);
+  background-color: var(--ui-color-primary-100);
   padding: 20px 30px;
   border-radius: 14px;
   text-transform: capitalize;
 }
 
 .search-box input::placeholder {
-  color: #283466;
+  color: var(--ui-color-primary-400);
 }
 
 /* cardul care contine 2 div-uri image si detaliile */
@@ -148,7 +158,7 @@ button:active {
 .weather-details i {
   font-size: 36px;
   padding: 5px;
-  color: #283466;
+  color: var(--ui-color-primary-400);
 }
 
 .location-not-found {
@@ -158,7 +168,7 @@ button:active {
   justify-content: center;
   margin: 50px;
   padding: 10px;
-  color: #283466;
+  color: var(--ui-color-primary-400);
   display: none;
 }
 
@@ -167,7 +177,7 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #283466;
+    background-color: var(--ui-color-primary-400);
   }
 
   .title {
@@ -179,13 +189,13 @@ button:active {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--ui-color-white);
     margin-bottom: 1vw;
   }
 
   .container {
     width: 100%;
-    background-color: #fff;
+    background-color: var(--ui-color-white);
     border-radius: 10px;
     // padding: 35vw;
     margin-left: 0vw;
@@ -194,8 +204,8 @@ button:active {
   .search-box input {
     width: 85%;
     font-size: 20px;
-    color: #283466;
-    background-color: #d6e5f6;
+    color: var(--ui-color-primary-400);
+    background-color: var(--ui-color-primary-100);
     padding: 20px 30px;
     border-radius: 14px;
     text-transform: capitalize;
