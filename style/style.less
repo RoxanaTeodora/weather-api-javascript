@@ -1,12 +1,12 @@
-:root {
-  --ui-color-primary-100: #d6e5f6;
-  --ui-color-primary-200: #5e729d;
-  --ui-color-primary-300: #5c6484;
-  --ui-color-primary-400: #283466;
-
-  --ui-color-white: #fff;
-  --ui-color-shadow: #343333;
-}
+// Variables
+@ui-color-primary-100: #d6e5f6;
+@ui-color-primary-200: #5e729d;
+@ui-color-primary-300: #5c6484;
+@ui-color-primary-400: #283466;
+@ui-color-white: #fff;
+@ui-color-shadow: #343333;
+@base-size: 20px;
+@font-size: 50px;
 
 * {
   margin: 0;
@@ -19,15 +19,15 @@
 
 .title {
   font-weight: bold;
-  font-size: 50px;
+  font-size: @font-size;
   letter-spacing: 0.02em;
   padding: 0 0 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--ui-color-white);
-  margin-bottom: 50px;
+  color: @ui-color-white;
+  margin-bottom: @font-size;
 }
 
 body {
@@ -35,14 +35,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--ui-color-primary-400);
+  background-color: @ui-color-primary-400;
 }
 
 .container {
   width: 550px;
   height: min-content;
-  background-color: var(--ui-color-white);
-  border-radius: 10px;
+  background-color: @ui-color-white;
+  border-radius: @base-size / 2;
   padding: 35px;
   margin-left: 6px;
 }
@@ -56,43 +56,42 @@ body {
 }
 
 button {
-  width: 80px;
+  width: @base-size*4;
   height: 70px;
-  background-color: var(--ui-color-primary-200);
+  background-color: @ui-color-primary-200;
   /* opacity: 80%; */
   border-radius: 50%;
   cursor: pointer;
-  font-size: 20px;
-  margin-left: 20px;
-  box-shadow: 0 5px var(--ui-color-primary-400);
+  font-size: @base-size;
+  margin-left: @base-size;
+  box-shadow: 0 5px @ui-color-primary-400;
 
   &:hover {
-    background-color: var(--ui-color-primary-300);
+    background-color: @ui-color-primary-300;
   }
 
   &:active {
-    background-color: var(--ui-color-primary-300);
-    box-shadow: 0 2px var(--ui-color-shadow);
+    background-color: @ui-color-primary-300;
+    box-shadow: 0 2px @ui-color-shadow;
     transform: translateY(4px);
   }
 }
 
 .search-box img {
-  height: 50px;
-  width: 50px;
+  height: @font-size;
+  width: @font-size;
 }
-
-.search-box input {
+input {
   width: 85%;
   font-size: 30px;
-  color: var(--ui-color-primary-400);
-  background-color: var(--ui-color-primary-100);
+  color: @ui-color-primary-400;
+  background-color: @ui-color-primary-100;
   padding: 20px 30px;
   border-radius: 14px;
   text-transform: capitalize;
 
   &::placeholder {
-    color: var(--ui-color-primary-400);
+    color: @ui-color-primary-400;
   }
 }
 
@@ -119,7 +118,7 @@ button {
   }
 
   .temperature {
-    font-size: 50px;
+    font-size: @font-size;
     font-weight: 650;
     position: relative;
   }
@@ -157,7 +156,7 @@ button {
   i {
     font-size: 36px;
     padding: 5px;
-    color: var(--ui-color-primary-400);
+    color: @ui-color-primary-400;
   }
 }
 
@@ -168,7 +167,7 @@ button {
   justify-content: center;
   margin: 50px;
   padding: 10px;
-  color: var(--ui-color-primary-400);
+  color: @ui-color-primary-400;
   display: none;
 }
 
@@ -177,7 +176,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--ui-color-primary-400);
+    background-color: @ui-color-primary-400;
   }
 
   .title {
@@ -189,13 +188,13 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--ui-color-white);
+    color: @ui-color-white;
     margin-bottom: 1vw;
   }
 
   .container {
     width: 100%;
-    background-color: var(--ui-color-white);
+    background-color: @ui-color-white;
     border-radius: 10px;
     // padding: 35vw;
     margin-left: 0vw;
@@ -204,8 +203,8 @@ button {
   .search-box input {
     width: 85%;
     font-size: 20px;
-    color: var(--ui-color-primary-400);
-    background-color: var(--ui-color-primary-100);
+    color: @ui-color-primary-400;
+    background-color: @ui-color-primary-100;
     padding: 20px 30px;
     border-radius: 14px;
     text-transform: capitalize;

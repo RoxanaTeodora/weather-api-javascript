@@ -3,9 +3,11 @@
   --ui-color-primary-200: #5e729d;
   --ui-color-primary-300: #5c6484;
   --ui-color-primary-400: #283466;
+
   --ui-color-white: #fff;
   --ui-color-shadow: #343333;
 }
+
 * {
   margin: 0;
   padding: 0;
