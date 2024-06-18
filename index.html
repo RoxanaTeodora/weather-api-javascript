@@ -4,63 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
-    <link rel="stylesheet/less" type="text/css" href="style/style.less">
+    <link rel="stylesheet/less" type="text/css" href="style/style.less" />
     <script src="https://cdn.jsdelivr.net/npm/less@4.1.1/dist/less.min.js"></script>
   </head>
   <body>
     <div class="Weather-app">
       <h1 class="title">Simple Weather App</h1>
       <div class="container">
-      <header>
-<!-- cautare oras -->
-        <div class="search-box">
-          <input
-            type="text"
-            placeholder="Enter your location"
-            class="input-box" 
-          />
-          <button><img src="./assets/magnifier.png" class="icon" id="search-btn"/></button>
-        
-        </div>
-      </header>
-<!-- locatie negasita-error -->
-      <div class="location-not-found">
-        <h2>Sorry, Location not found! </h2>
-        <h2>Please, try again! </h2>
-        <img src="/assets/404.png" alt="404 Error" class="error">
-    </div>
-<!-- raspuns afisat in card-div -->
-      <div class="weather-card">
-
-        <img src="/assets/rain.png" alt="Weather Image" class="weather-img" />
-        <div class="weather-box">
-          <p class="temperature">0 <sup>°C</sup></p>
-          <p class="description">light rain</p>
-          <p id="date">Data</p>
-           <div class="weather-details">
-         <div class="humidity">
-                    <i class="fa-solid fa-droplet"></i>
-                    <div class="text">
-                        <span id="humidity">45%</span>
-                        <p>Humidity</p>
-                    </div>
+        <header>
+          <!-- cautare oras -->
+          <div class="search-box">
+            <input
+              type="text"
+              placeholder="Enter your location"
+              class="input-box"
+            />
+            <button>
+              <img src="./assets/magnifier.png" class="icon" id="search-btn" />
+            </button>
           </div>
-        <div class="wind">
-            <i class="fa-solid fa-wind"></i>
-            <div class="text">
-                <span id="wind-speed"> 12km/h</span>
-                <p>Wind speed</p>
+        </header>
+        <!-- locatie negasita-error -->
+        <div class="location-not-found">
+          <h2>Sorry, Location not found!</h2>
+          <h2>Please, try again!</h2>
+          <img src="/assets/404.png" alt="404 Error" class="error" />
+        </div>
+        <!-- raspuns afisat in card-div -->
+        <div class="weather-card">
+          <img src="/assets/rain.png" alt="Weather Image" class="weather-img" />
+          <div class="weather-box">
+            <p class="temperature">0 <sup>°C</sup></p>
+            <p class="description">light rain</p>
+            <p id="date">Data</p>
+            <div class="weather-details">
+              <div class="humidity">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="text">
+                  <span id="humidity">45%</span>
+                  <p>Humidity</p>
+                </div>
+              </div>
+              <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                  <span id="wind-speed">12km/h</span>
+                  <p>Wind speed</p>
+                </div>
+              </div>
             </div>
           </div>
-      
+        </div>
       </div>
     </div>
-  </div>
     <script src="app.js"></script>
     <script
       src="https://kit.fontawesome.com/29b673b6f3.js"
       crossorigin="anonymous"
     ></script>
-
   </body>
 </html>

@@ -23,7 +23,6 @@ async function checkWeather(city) {
     return;
   }
 
-  console.log("run");
   location_not_found.style.display = "none";
   weatherBody.style.display = "flex";
 
@@ -74,5 +73,8 @@ async function checkWeather(city) {
 }
 
 searchBtn.addEventListener("click", () => {
-  checkWeather(inputSearch.value);
+  if (inputSearch.value === "") {
+    location_not_found.style.display = "flex";
+    weatherBody.style.display = "none";
+  } else checkWeather(inputSearch.value);
 });
