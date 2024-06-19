@@ -16,11 +16,15 @@ async function checkWeather(city) {
     response.json()
   );
 
-  if (weatherData.cod === `404`) {
+  function displayError() {
     location_not_found.style.display = "flex";
     weatherBody.style.display = "none";
     console.log("error");
     return;
+  }
+
+  if (weatherData.cod === `404`) {
+    return displayError();
   }
 
   location_not_found.style.display = "none";
@@ -74,7 +78,8 @@ async function checkWeather(city) {
 
 searchBtn.addEventListener("click", () => {
   if (inputSearch.value === "") {
-    location_not_found.style.display = "flex";
-    weatherBody.style.display = "none";
-  } else checkWeather(inputSearch.value);
+    return displayError();
+  } else {
+    checkWeather(inputSearch.value);
+  }
 });
