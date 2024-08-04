@@ -1,0 +1,217 @@
+@ui-color-primary: #d6e5f6;
+@ui-color-secondary: #5e729d;
+@ui-color-ternary: #5c6484;
+@ui-color-backgound: #283466;
+@ui-color-white: #fff;
+@ui-color-shadow: #343333;
+@base-size: 2rem;
+@font-size: 3rem;
+@margin-size: 1rem;
+
+* {
+  // simple reset
+  margin: 0;
+  padding: 0;
+  // setting of box-sizing
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: sans-serif;
+}
+html {
+  // font scaling
+  font-size: 62.5%;
+}
+
+.position-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 80vh;
+  .position-center;
+  background-color: @ui-color-backgound;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 5rem;
+  //letter-spacing: 0.02em;
+  .position-center;
+  flex-direction: column;
+  color: @ui-color-white;
+  margin: 1rem;
+  padding: 5rem;
+  text-align: center;
+}
+
+.container {
+  width: 50rem;
+  height: min-content;
+  background-color: @ui-color-white;
+  border-radius: 2rem;
+  padding: 3rem;
+  margin: 0.6rem auto;
+}
+
+.search-box {
+  width: 100%;
+  height: min-content;
+  .position-center;
+  justify-content: space-between;
+}
+
+button {
+  width: @base-size*4;
+  height: 7rem;
+  background-color: @ui-color-secondary;
+  /* opacity: 80%; */
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: @base-size;
+  margin-left: @base-size;
+  box-shadow: 0 0.5rem @ui-color-backgound;
+
+  &:hover {
+    background-color: @ui-color-ternary;
+  }
+
+  &:active {
+    background-color: @ui-color-ternary;
+    box-shadow: 0 0.2rem @ui-color-shadow;
+    transform: translateY(0.4rem);
+  }
+}
+
+.search-box img {
+  height: 4rem;
+  width: 4rem;
+}
+
+input {
+  width: 85%;
+  height: 8rem;
+  font-size: @font-size;
+  color: @ui-color-backgound;
+  background-color: @ui-color-primary;
+  padding: 2rem;
+  border-radius: 1.4rem;
+  text-transform: capitalize;
+
+  &::placeholder {
+    color: @ui-color-backgound;
+  }
+}
+
+/* cardul care contine 2 div-uri image si detaliile */
+.weather-card {
+  .position-center;
+  flex-direction: column;
+  margin: @base-size;
+  display: none;
+
+  /* imaginea asociata tipului de vreme */
+  img {
+    width: 60%;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  /* detaile legate de vreme */
+  .weather-box {
+    /* margin-block: 20px; */
+    text-align: center;
+  }
+
+  .temperature {
+    font-size: @font-size;
+    font-weight: 650;
+    position: relative;
+  }
+
+  sup {
+    font-size: 6rem;
+    position: absolute;
+  }
+}
+
+.description {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+#date {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.weather-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+
+  .humidity,
+  .wind {
+    .position-center;
+    padding: 5rem;
+  }
+
+  i {
+    font-size: 3.6rem;
+    padding: 0.5rem;
+    color: @ui-color-backgound;
+  }
+}
+
+.location-not-found {
+  .position-center;
+  flex-direction: column;
+  margin: 5rem;
+  padding: 1rem;
+  color: @ui-color-backgound;
+  display: none;
+}
+
+@media only screen and (max-width: 60rem) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 35rem;
+    height: min-content;
+    background-color: @ui-color-white;
+    border-radius: 2rem;
+    padding: 3rem;
+    margin: 0.6rem auto;
+  }
+
+  input {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  button {
+    width: 8rem;
+    height: 6rem;
+  }
+
+  .location-not-found {
+    .position-center;
+    margin: 5rem auto;
+  }
+
+  .error {
+    width: 30rem;
+    height: 30rem;
+    padding-top: 5rem;
+  }
+}
